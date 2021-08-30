@@ -2,29 +2,37 @@
 title: "First version control project"
 author: "Natalie Isaksson"
 date: "25/08/2021"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r load tinytex, include = FALSE}
+library(tinytex)
+#update.packages(ask = FALSE, checkBuilt = TRUE)
+#tinytex::tlmgr_update()
+#tinytex::reinstall_tinytex()
+#tinytex::install_tinytex()
 ```
 
-## Including Plots
+This R markdown file documents my first attempts at using git and github for version control on an RStudio project. I'll be modifying this report, staging and committing changes and then pushing to github.
 
-You can also embed plots, for example:
+Below is a test plot of ditance (miles) and speed (mph):
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r, test plot}
+plot(cars, col = "red", xlab = "speed(mph)", ylab = "distance(miles)")
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+A summary of the df is given below
+
+```{r, cars summary}
+
+library(knitr)
+kable(summary(cars))
+
+```
+
